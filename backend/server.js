@@ -32,6 +32,8 @@ router.get('/', (request, response) => {
 app.use('/', router);
 const endpoints = require('./api/api.js');
 app.use('/api', endpoints);
+const statistics = require('./api/statistics.js');
+app.use('/api/statistics', statistics);
 
 //!Szerver futtatása
 app.use(express.static(path.join(__dirname, '../frontend'))); //?frontend mappa tartalmának betöltése az oldal működéséhez
